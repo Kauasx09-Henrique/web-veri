@@ -1,0 +1,154 @@
+/* Altura de 300vh cria "espaço de scroll" suficiente para animar as cartas */
+.scrollSection {
+  height: 300vh;
+  position: relative;
+  background-color: #080808;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* O contentor que fica preso no ecrã enquanto fazemos scroll */
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header {
+  padding: 0 5%;
+  margin-bottom: 60px;
+}
+
+.tag {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #a0a0a0;
+  font-size: 1rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Faixa que vai deslizar para o lado */
+.track {
+  display: flex;
+  gap: 40px;
+  padding: 0 5%;
+  width: max-content;
+  will-change: transform;
+  /* Suaviza o movimento para monitores com altas taxas de atualização */
+  transition: transform 0.1s ease-out; 
+}
+
+/* Cartões com largura fixa */
+.card {
+  width: 400px;
+  height: 400px;
+  background-color: #0c0c0c;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 4px;
+  flex-shrink: 0; /* Impede que os cartões esmaguem uns aos outros */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  background-color: #111111;
+}
+
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  color: var(--color-primary);
+  margin-bottom: 25px;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.cardDescription {
+  color: #888888;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  flex-grow: 1;
+  margin-bottom: 25px;
+}
+
+.cardButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: gap 0.3s ease;
+  width: fit-content;
+}
+
+.cardButton svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.cardButton:hover {
+  gap: 15px;
+  color: var(--color-secondary);
+}
+
+/* Para telemóveis, removemos a animação e mostramos uma lista vertical clássica, 
+   pois o scroll horizontal animado em ecrãs de toque prejudica a experiência. */
+@media (max-width: 968px) {
+  .scrollSection {
+    height: auto;
+    padding: 80px 5%;
+  }
+
+  .stickyContainer {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .header {
+    padding: 0;
+  }
+
+  .track {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    transform: none !important; /* Desativa a translação via JavaScript */
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+  }
+}

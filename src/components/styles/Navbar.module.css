@@ -1,0 +1,70 @@
+.navbar {
+  position: absolute; /* Fica sobreposta ao Hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.navLinks a {
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: var(--color-primary);
+}
+
+.whatsappButton {
+  border: 1px solid var(--color-primary);
+  color: var(--color-white);
+  padding: 12px 28px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.whatsappButton:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Esconde os links no telemóvel por agora, para mantermos o design limpo. 
+   Mais tarde podemos adicionar um menu "hambúrguer". */
+@media (max-width: 968px) {
+  .navLinks {
+    display: none;
+  }
+  
+  .navbar {
+    padding: 20px;
+  }
+  
+  .whatsappButton {
+    padding: 10px 16px;
+    font-size: 0.75rem;
+  }
+}
