@@ -1,47 +1,32 @@
 import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import styles from './styles/services.module.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Services() {
     const sectionRef = useRef(null);
     const trackRef = useRef(null);
 
-    // Hook para calcular o scroll vertical e transformar em movimento horizontal
     useEffect(() => {
-        const handleScroll = () => {
-            if (!sectionRef.current || !trackRef.current) return;
-
-            const section = sectionRef.current;
+        let ctx = gsap.context(() => {
             const track = trackRef.current;
 
-            // Medidas
-            const offsetTop = section.offsetTop;
-            const scrollY = window.scrollY;
-            const sectionHeight = section.offsetHeight;
-            const windowHeight = window.innerHeight;
+            gsap.to(track, {
+                x: () => -(track.scrollWidth - window.innerWidth),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    pin: true,
+                    scrub: 1.5,
+                    end: () => "+=" + track.scrollWidth,
+                    invalidateOnRefresh: true
+                }
+            });
+        }, sectionRef);
 
-            // Distância que o utilizador já fez scroll dentro da secção
-            const scrollInside = scrollY - offsetTop;
-            // Distância total de scroll disponível na secção
-            const scrollableDistance = sectionHeight - windowHeight;
-
-            // Se estivermos dentro da secção, aplicamos a animação
-            if (scrollInside >= 0 && scrollInside <= scrollableDistance) {
-                const progress = scrollInside / scrollableDistance;
-                // Calcula o máximo que a faixa pode mover para a esquerda
-                const maxTranslate = track.scrollWidth - window.innerWidth + 100; // +100 para margem final
-                track.style.transform = `translateX(-${progress * maxTranslate}px)`;
-            } else if (scrollInside < 0) {
-                track.style.transform = `translateX(0px)`;
-            } else if (scrollInside > scrollableDistance) {
-                const maxTranslate = track.scrollWidth - window.innerWidth + 100;
-                track.style.transform = `translateX(-${maxTranslate}px)`;
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        handleScroll(); // Chamada inicial
-
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => ctx.revert();
     }, []);
 
     const services = [
@@ -50,7 +35,11 @@ function Services() {
             title: "Cirurgia Bucomaxilofacial",
             description: "Procedimentos complexos incluindo extração de sisos, cirurgia ortognática, reconstruções ósseas e tratamento de traumas da face.",
             icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14.5 2L2 14.5 9.5 22 22 9.5 14.5 2z" />
+                    <path d="M14.5 2L22 9.5" />
+                    <line x1="8" y1="16" x2="16" y2="8" />
+                </svg>
             )
         },
         {
@@ -58,7 +47,10 @@ function Services() {
             title: "Harmonização Orofacial",
             description: "Equilíbrio estético e funcional através de botox, preenchimento com ácido hialurônico e bioestimuladores de colágeno.",
             icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z" />
+                    <path d="M5 5l1.5 4.5L11 11 6.5 12.5 5 17l-1.5-4.5L2 11l1.5-1.5L5 5z" />
+                </svg>
             )
         },
         {
@@ -66,7 +58,10 @@ function Services() {
             title: "Disfunção Temporomandibular",
             description: "Diagnóstico e tratamento de DTM, alívio de dores orofaciais e intervenções na articulação temporomandibular.",
             icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1" /><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" /><line x1="6" y1="1" x2="6" y2="4" /><line x1="10" y1="1" x2="10" y2="4" /><line x1="14" y1="1" x2="14" y2="4" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 12h3l3-7 4 14 3-7h3" />
+                    <circle cx="12" cy="12" r="10" strokeDasharray="4 4" />
+                </svg>
             )
         },
         {
@@ -74,7 +69,12 @@ function Services() {
             title: "Implantodontia",
             description: "Reabilitação oral com implantes dentários de alta tecnologia, além de implantes faciais e mentoplastia.",
             icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2v20" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 9C7 5 9 3 12 3s5 2 5 6c0 3.3-1.7 4.7-3 6H10c-1.3-1.3-3-2.7-3-6z" />
+                    <path d="M10 15v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4" />
+                    <line x1="9" y1="17" x2="15" y2="17" />
+                    <line x1="9" y1="19" x2="15" y2="19" />
+                </svg>
             )
         }
     ];
