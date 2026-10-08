@@ -6,7 +6,7 @@ function CallToAction() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const professionalImages = [
-        "/public/casal-contato.png",
+        "/casal-contato.png",
 
     ];
 
