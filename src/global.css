@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Edu+QLD+Hand:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --color-primary: #a67c68;
@@ -8,6 +8,16 @@
   --color-white: #ffffff;
   --color-dark: #2c2420;
 }
+
+@font-face {
+    font-family: 'Budinger Modern Display';
+    /* Ajuste o nome do ficheiro abaixo para o nome exato do ficheiro que você guardou */
+    src: url('./assets/fonts/Budinger-LightItalic.ttf') format('truetype'); 
+    font-weight: 300; /* Corresponde ao peso "Light" */
+    font-style: italic;
+    font-display: swap;
+}
+
 
 * {
   margin: 0;
