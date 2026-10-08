@@ -45,11 +45,11 @@
 }
 
 .track {
-  display: flex;
-  gap: 40px;
-  padding: 0 8%;
-  width: max-content;
-  will-change: transform;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    will-change: transform;
+    transform: translateZ(8);
 }
 
 .card {
