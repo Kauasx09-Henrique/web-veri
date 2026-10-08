@@ -8,20 +8,19 @@
   --color-white: #ffffff;
   --color-dark: #2c2420;
 }
+
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 120px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 @font-face {
-    font-family: 'Budinger Modern Display';
-    /* Ajuste o nome do ficheiro abaixo para o nome exato do ficheiro que você guardou */
-    src: url('./assets/fonts/Budinger-LightItalic.ttf') format('truetype'); 
-    font-weight: 300; /* Corresponde ao peso "Light" */
-    font-style: italic;
-    font-display: swap;
+  font-family: 'Budinger Modern Display';
+  src: url('./assets/fonts/Budinger-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
 }
-
 
 * {
   margin: 0;

@@ -1,220 +1,223 @@
 .section {
-    padding: 8rem 5%;
-    background: #0d0a09;
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
+  padding: 8rem 5%;
+  background: var(--color-dark);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 5rem;
-    gap: 3rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5rem;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 500;
-    line-height: 1.1;
-    margin: 0;
-    max-width: 700px;
-    letter-spacing: -0.02em;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+  max-width: 700px;
+  letter-spacing: -0.02em;
 }
 
 .ratingOverview {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .ratingScore {
-    font-size: 5rem;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.03em;
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
 }
 
 .ratingDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .starsGroup {
-    display: flex;
-    gap: 3px;
-    color: #a67c68;
+  display: flex;
+  gap: 3px;
+  color: var(--color-primary);
 }
 
 .starsGroup svg {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .ratingText {
-    font-size: 0.9rem;
-    color: #a0a0a0;
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--color-secondary) 80%, transparent);
 }
 
 .ratingText span {
-    font-weight: 600;
-    color: #ffffff;
+  font-weight: 600;
+  color: var(--color-white);
 }
 
 .masonry {
-    column-count: 3;
-    column-gap: 1.5rem;
-    width: 100%;
+  column-count: 3;
+  column-gap: 1.5rem;
+  width: 100%;
 }
 
 .card {
-    break-inside: avoid;
-    margin-bottom: 1.5rem;
-    background: #161210;
-    border: 1px solid rgba(166, 124, 104, 0.15);
-    padding: 2.5rem;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  background: color-mix(in srgb, var(--color-white) 3%, var(--color-dark));
+  border: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent);
+  padding: 2.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(166, 124, 104, 0.4);
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
 }
 
 .quoteIconLarge {
-    width: 48px;
-    height: 48px;
-    color: #a67c68;
+  width: 48px;
+  height: 48px;
+  color: var(--color-primary);
 }
 
 .text {
-    font-size: 1.05rem;
-    color: #d1d1d1;
-    line-height: 1.6;
-    margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin: 0;
 }
 
 .patient {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .patientInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .patientName {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin: 0;
 }
 
 .patientMeta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .metaStars {
-    display: flex;
-    color: #a67c68;
+  display: flex;
+  color: var(--color-primary);
 }
 
 .metaStars svg {
-    width: 12px;
-    height: 12px;
+  width: 12px;
+  height: 12px;
 }
 
 .googleText {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.8rem;
-    color: #a0a0a0;
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--color-secondary) 80%, transparent);
+  font-weight: 500;
 }
 
 .googleText svg {
-    width: 14px;
-    height: 14px;
+  width: 14px;
+  height: 14px;
 }
 
 .actionArea {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
 .loadMoreBtn {
-    background: transparent;
-    border: 1px solid #a67c68;
-    color: #a67c68;
-    padding: 1rem 3rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    transition: all 0.3s ease;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
 }
 
 .loadMoreBtn:hover {
-    background: #a67c68;
-    color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
 .loadMoreBtn svg {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 @media (max-width: 1024px) {
-    .masonry {
-        column-count: 2;
-    }
+  .masonry {
+    column-count: 2;
+  }
 }
 
 @media (max-width: 768px) {
-    .section {
-        padding: 5rem 5%;
-    }
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
-    }
-    .ratingScore {
-        font-size: 4rem;
-    }
-    .masonry {
-        column-count: 1;
-    }
+  .section {
+    padding: 5rem 5%;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .ratingScore {
+    font-size: 4rem;
+  }
+  .masonry {
+    column-count: 1;
+  }
 }
