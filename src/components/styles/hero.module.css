@@ -189,7 +189,12 @@
 @keyframes spin { to { transform: rotate(360deg); } }
 
 @media (max-width: 768px) {
-  .bg { inset: 0; background-position: 65% top; }
+  .bg {
+    inset: 0 0 auto 0;
+    height: 62%;
+    background-position: var(--hero-mobile-x, 50%) 15%;
+    transform-origin: 50% 30%;
+  }
   .overlay {
     background: linear-gradient(0deg,
       rgba(var(--dark-rgb), .96) 0%,
