@@ -1,200 +1,175 @@
 .scrollSection {
+  --ground: #1E120C;
+  --cream: #EADDD3;
+  --accent: #CA7C5F;
+  --muted: rgba(234, 221, 211, .6);
+  --rule: rgba(234, 221, 211, .14);
+  --serif: var(--font-title);
+  --sans: var(--font-text);
+  --pad-x: clamp(20px, 6vw, 96px);
+
   position: relative;
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-family: 'Roboto Condensed', sans-serif;
+  background: var(--ground);
+  color: var(--cream);
+  font-family: var(--sans);
   overflow: hidden;
 }
 
 .stickyContainer {
   height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
+  gap: clamp(48px, 8vh, 96px);
 }
 
 .header {
-  padding: 0 8%;
-  margin-bottom: 60px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 0 var(--pad-x);
 }
 
+.headerMain { display: flex; flex-direction: column; gap: 18px; }
+
 .tag {
-  color: var(--color-primary);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-size: 12px;
+  letter-spacing: .28em;
   text-transform: uppercase;
-  margin-bottom: 15px;
-  display: block;
+  color: var(--accent);
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
+  margin: 0;
+  font-family: var(--serif);
   font-weight: 400;
-  font-style: italic;
-  line-height: 1.1;
-  margin-bottom: 15px;
-  color: var(--color-dark);
+  font-size: clamp(44px, 5.6vw, 84px);
+  line-height: .95;
+  letter-spacing: -.02em;
 }
+.title em { color: var(--accent); }
 
-.subtitle {
-  color: var(--color-text);
-  font-size: 1.05rem;
-  max-width: 600px;
-  line-height: 1.6;
+.lottie {
+  width: clamp(80px, 9vw, 130px);
+  aspect-ratio: 1 / 1;
+  flex: none;
 }
 
 .track {
   display: flex;
   flex-wrap: nowrap;
-  gap: 2rem;
   width: max-content;
+  padding: 0 var(--pad-x);
   will-change: transform;
-  transform: translate3d(0, 0, 0);
 }
 
 .card {
-  width: 400px;
-  height: 420px;
-  background-color: var(--color-white);
-  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
-  padding: 40px;
-  border-radius: 4px;
+  position: relative;
+  width: clamp(280px, 24vw, 360px);
+  height: clamp(360px, 52vh, 480px);
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+  justify-content: space-between;
+  padding: 28px 32px 32px;
+  box-sizing: border-box;
+  border-left: 1px solid var(--rule);
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color .5s;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--color-primary);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
-}
-
-.iconWrapper {
-  width: 50px;
-  height: 50px;
-  color: var(--color-primary);
-  margin-bottom: 25px;
-}
-
-.iconWrapper svg {
+.cardImage {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  opacity: .22;
+  filter: grayscale(1) sepia(.35) contrast(1.05);
+  transform: scale(1.06);
+  transition: opacity .8s ease, transform 1.2s cubic-bezier(.2, .7, .2, 1), filter .8s ease;
 }
+
+.cardShade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(30, 18, 12, .55) 0%, rgba(30, 18, 12, .1) 40%, rgba(30, 18, 12, .92) 100%);
+}
+
+.card:hover .cardImage {
+  opacity: .5;
+  transform: scale(1);
+  filter: grayscale(.4) sepia(.25) contrast(1.05);
+}
+.card:last-child { border-right: 1px solid var(--rule); }
+.card:hover { border-left-color: var(--accent); }
+
+.cardNumber {
+  font-size: 12px;
+  letter-spacing: .2em;
+  color: var(--accent);
+}
+
+.cardBody { display: flex; flex-direction: column; gap: 12px; }
 
 .cardTitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 15px;
-  color: var(--color-dark);
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(30px, 2.4vw, 38px);
+  line-height: 1.05;
+  transition: color .4s;
 }
+.card:hover .cardTitle { color: var(--accent); }
 
 .cardDescription {
-  color: var(--color-text);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  flex-grow: 1;
-  margin-bottom: 25px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
-.cardButton {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--color-primary);
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: gap 0.3s ease, color 0.3s ease;
-  width: fit-content;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
+.progress {
+  margin: 0 var(--pad-x);
+  height: 1px;
+  background: var(--rule);
 }
-
-.cardButton svg {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.3s ease;
-}
-
-.cardButton:hover {
-  gap: 15px;
-  color: var(--color-dark);
-}
-
-.cardButton:hover svg {
-  transform: translateX(3px);
+.progressBar {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 @media (max-width: 968px) {
-  .scrollSection {
-    height: auto;
-    padding: 80px 0;
-  }
-  .stickyContainer {
-    position: relative;
-    height: auto;
-    overflow: visible;
-  }
-  .header {
-    padding: 0 5%;
-    margin-bottom: 45px;
-  }
-  .title {
-    font-size: 2.4rem;
-  }
-  .subtitle {
-    font-size: 1rem;
-  }
+  .stickyContainer { height: auto; padding: 96px 0; }
+
   .track {
-    flex-direction: column;
-    padding: 0 5%;
-    width: 100%;
+    width: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--pad-x);
+    scrollbar-width: none;
     transform: none !important;
-    gap: 1.5rem;
   }
+  .track::-webkit-scrollbar { display: none; }
+
   .card {
-    width: 100%;
-    height: auto;
-    min-height: 380px;
+    width: min(78vw, 320px);
+    height: 400px;
+    scroll-snap-align: start;
   }
+
+  .progress { display: none; }
 }
 
 @media (max-width: 600px) {
-  .scrollSection {
-    padding: 70px 0;
-  }
-  .header {
-    padding: 0 6%;
-  }
-  .title {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 0.95rem;
-  }
-  .track {
-    padding: 0 6%;
-  }
-  .card {
-    padding: 30px;
-    min-height: 360px;
-  }
-  .cardTitle {
-    font-size: 1.25rem;
-  }
-  .cardDescription {
-    font-size: 0.9rem;
-  }
+  .card { padding: 24px; height: 360px; }
+  .cardImage { opacity: .32; }
 }

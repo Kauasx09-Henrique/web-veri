@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Edu+QLD+Hand:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
   --color-primary: #a67c68;
@@ -7,19 +7,30 @@
   --color-text: #4a4a4a;
   --color-white: #ffffff;
   --color-dark: #2c2420;
-}
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 120px;
+  --font-title: 'Budinger Modern Display', 'Playfair Display', Georgia, serif;
+  --font-text: 'Montserrat', system-ui, sans-serif;
 }
 
 @font-face {
   font-family: 'Budinger Modern Display';
   src: url('./assets/fonts/Budinger-LightItalic.ttf') format('truetype');
-  font-weight: 300;
+  font-weight: 100 900;
   font-style: italic;
   font-display: swap;
+}
+
+@font-face {
+  font-family: 'Budinger Modern Display';
+  src: url('./assets/fonts/Budinger-LightItalic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 * {
@@ -29,10 +40,16 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-text);
+  font-weight: 400;
   background-color: var(--color-background);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: 300;
 }
 
 a {
@@ -44,4 +61,5 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+  font-family: inherit;
 }
