@@ -69,8 +69,21 @@ function Navbar() {
     return (
         <header className={styles.headerWrapper}>
             <nav className={navClass}>
-                <a href="#inicio" className={styles.logo} onClick={close} aria-label="Veri Odontologia">
-                    <DotLottieReact src={LOGO_LOTTIE} loop autoplay />
+                <a
+                    href="#inicio"
+                    className={styles.logo}
+                    onClick={close}
+                    aria-label="Veri Odontologia"
+                >
+                    <DotLottieReact
+                        src={LOGO_LOTTIE}
+                        loop
+                        autoplay
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                        }}
+                    />
                 </a>
 
                 <div className={styles.navLinks}>

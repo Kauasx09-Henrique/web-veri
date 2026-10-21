@@ -50,14 +50,25 @@
 .menuOpen { box-shadow: none; }
 
 .logo {
-  display: block;
-  width: 230px;
-  height: 52px;
-  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 90px;
+  flex: 0 0 auto;
+  overflow: visible;
 }
-.logo canvas { width: 100% !important; height: 100% !important; }
-.scrolled .logo { height: 46px; }
 
+.logo canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.scrolled .logo {
+  width: 230px;
+  height: 64px;
+}
 .navLinks {
   flex: 1;
   display: flex;
