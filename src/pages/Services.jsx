@@ -7,12 +7,15 @@ import styles from './styles/services.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-    ['Lentes de contato dental', 'Cor, forma e proporção, preservando o dente.', 'https://i.pinimg.com/736x/eb/5a/b0/eb5ab09d3335a258f6166dbd8ac5e92b.jpg'],
-    ['Clareamento', 'Um branco luminoso e natural.', 'https://i.pinimg.com/736x/04/86/35/048635ee23da15c57c6f081bf3f91ee1.jpg'],
-    ['Implantes', 'Segurança e planejamento digital.', 'https://i.pinimg.com/736x/f6/94/53/f6945320336e854eeb7813d5a5afa240.jpg'],
-    ['Alinhadores invisíveis', 'Ortodontia discreta e removível.', 'https://i.pinimg.com/736x/bf/9e/69/bf9e698e8cc535152be5dba03b7ebf63.jpg'],
-    ['Reabilitação oral', 'Função e estética, juntas.', 'https://i.pinimg.com/736x/05/a5/36/05a536e428d0bbaac7d1626b5ee9bce8.jpg'],
-    ['Harmonização orofacial', 'Equilíbrio entre sorriso e rosto.', '/servicos/harmonizacao.jpg'],
+    ['Cirurgia ortognática', 'Correção das alterações ósseas da face, proporcionando equilíbrio facial e funcionalidade.', 'https://i.pinimg.com/736x/eb/5a/b0/eb5ab09d3335a258f6166dbd8ac5e92b.jpg'],
+    ['Mentoplastia', 'Remodelação do queixo para harmonizar o perfil e as proporções faciais.', 'https://i.pinimg.com/1200x/0d/b5/df/0db5dffbe8b2add8e905ba83d39d634d.jpg'],
+    ['⁠Cervicoplastia', 'Procedimento para melhorar o contorno do pescoço e definir a região abaixo do queixo.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMg-e_0Du8LUcUbOuqmNB8-1W1fR2MK4m2hpdN2SiZKw&s=10'],
+    ['Extração de sisos', 'Remoção dos dentes do siso para prevenir ou tratar dores, inflamações e complicações.', 'https://i.pinimg.com/736x/e9/b5/b6/e9b5b6b9dd333a6fe6c17db970a13aa8.jpg'],
+    ['Tratamentos de DTM', 'Cuidados para aliviar dores, estalos e desconfortos relacionados à articulação temporomandibular.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwbT-7vmttyQPa74-Ll_ljpJPtAImopF20n4XRUgXz75uC9drJZ7DJ1tA&s=10'],
+    ['Cirurgias da ATM', 'Procedimentos para tratar alterações na articulação temporomandibular e recuperar sua função.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtyH4vJ2vIB8v-C4WFfYB7XzASxQDSPnES-5vDGg8UFg&s=10'],
+    ['Implantes dentários', 'Reposição de dentes perdidos, devolvendo a função mastigatória e a estética do sorriso.', 'https://i.pinimg.com/736x/f6/94/53/f6945320336e854eeb7813d5a5afa240.jpg'],
+    ['Aparelhos ortodônticos', 'Correção do posicionamento dos dentes e da mordida para um sorriso alinhado e saudável.', 'https://i.pinimg.com/736x/24/4e/c3/244ec34afe4e8e45c03b856ac8e83a1a.jpg'],
+    ['Harmonização orofacial', 'Procedimentos estéticos que equilibram as proporções faciais e valorizam a beleza natural.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiOpChNO6M-ww4FWGCTZYhMTp9AjM_99FuE04f1AwGRA&s=10'],
 ];
 
 function Services() {

@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 270px;
+  width: 250px;
   height: 90px;
   flex: 0 0 auto;
   overflow: visible;
@@ -66,8 +66,8 @@
 }
 
 .scrolled .logo {
-  width: 230px;
-  height: 64px;
+  width: 250px;
+  height: 84px;
 }
 .navLinks {
   flex: 1;

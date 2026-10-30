@@ -14,15 +14,14 @@ function Hero() {
 
             <div className={styles.content}>
                 <div className={styles.inner}>
-                    <span className={styles.eyebrow}>Odontologia estética · Cidade/UF</span>
+                    <span className={styles.eyebrow}>Cirurgia bucomaxilofacial • Brasília-DF </span>
 
                     <h1 className={styles.title}>
-                        Seu sorriso, <em>do seu jeito.</em>
+                        Cuidado que se percebe, <em> excelência que permanece</em>
                     </h1>
 
                     <p className={styles.subtitle}>
-                        Na Veri, cada tratamento começa ouvindo você. Planejamento cuidadoso, técnica precisa
-                        e resultados que parecem seus — só que mais confiantes.
+                        Na Veri, reunimos conhecimento, planejamento e atenção aos detalhes, para oferecer tratamentos odontológicos que respeitam as necessidade de cada paciente.
                     </p>
 
                     <div className={styles.actions}>

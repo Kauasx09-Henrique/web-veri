@@ -4,10 +4,13 @@ const WHATSAPP = '5500000000000';
 const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá, Dra. Isabela! Gostaria de agendar uma conversa.')}`;
 
 const areas = [
-    ['Lentes de contato dental', 'Facetas ultrafinas que corrigem cor, forma e proporção.'],
-    ['Clareamento', 'Um branco luminoso, natural e supervisionado.'],
-    ['Reabilitação oral', 'Função e estética com planejamento digital.'],
-    ['Harmonização orofacial', 'Ajustes sutis que equilibram sorriso e rosto.'],
+    ['Cirurgia bucomaxilofacial',],
+    [' Disfunção temporomandibular e Dor orofacial', 'Harmonização orofacial'],
+    [' Implantodontia'],
+    [' Estomatologia'],
+    ['Ortodontia'],
+    ['Clínico geral'],
+    [' Harmonização  orofacial'],
 ];
 
 function About() {
@@ -36,13 +39,15 @@ function About() {
                     <div className={styles.text}>
                         <div className={styles.bio}>
                             <h3 className={styles.title}>
-                                loren <em>ipsum</em>
+                                Uma odontologia que vai  <em>além do procedimento </em>
                             </h3>
                             <p className={styles.description}>
-                                loren ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt lacinia, nunc nisl aliquam nunc, eget aliquam nisl nunc vel nisl. Sed euismod, nisl vel tincidunt lacinia, nunc nisl aliquam nunc, eget aliquam nisl nunc vel nisl.
+                                Na Veri, acreditamos que um bom tratamento começa antes mesmo da primeira intervenção: na escuta, na compreensão de cada necessidade e em uma avaliação criteriosa que permita indicar o caminho mais adequado para cada paciente.                            </p>
+                            <p className={styles.description}>
+                                À frente da clínica, Isabela Sena e Leonardo Magri unem formação especializada, experiência clínica e dedicação à prática baseada em evidências científicas. Essa visão se traduz em uma odontologia que valoriza o planejamento, a precisão técnica, a transparência em cada etapa e o cuidado humanizado.
                             </p>
                             <p className={styles.description}>
-                                loren ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt lacinia, nunc nisl aliquam nunc, eget aliquam nisl nunc vel nisl. Sed euismod, nisl vel tincidunt lacinia, nunc nisl aliquam nunc, eget aliquam nisl nunc vel nisl.
+                                Nosso propósito é oferecer cuidado de excelência, com responsabilidade, transparência e proximidade. Para que você se sinta seguro não apenas com o tratamento escolhido, mas também com todo o processo.
                             </p>
                         </div>
 
