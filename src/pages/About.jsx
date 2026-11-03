@@ -1,11 +1,11 @@
 import styles from './styles/about.module.css';
 
-const WHATSAPP = '5500000000000';
+const WHATSAPP = '5561998802777';
 const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá, Dra. Isabela! Gostaria de agendar uma conversa.')}`;
 
 const areas = [
     ['Cirurgia bucomaxilofacial',],
-    [' Disfunção temporomandibular e Dor orofacial', 'Harmonização orofacial'],
+    [' Disfunção temporomandibular e Dor orofacial'],
     [' Implantodontia'],
     [' Estomatologia'],
     ['Ortodontia'],
@@ -32,7 +32,7 @@ function About() {
                         </div>
                         <figcaption className={styles.caption}>
                             <span>loren</span>
-                            <span>CRO-UF 00000</span>
+                            <span>CRO-DF 4302</span>
                         </figcaption>
                     </figure>
 

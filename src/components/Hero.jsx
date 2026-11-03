@@ -1,7 +1,7 @@
 import styles from './styles/hero.module.css';
 import veriSymbol from '/logos/logo-veri-redonda.svg';
 
-const WHATSAPP = '5500000000000';
+const WHATSAPP = '5561998802777';
 const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação na Veri Odontologia.')}`;
 
 const mask = (src) => ({ WebkitMaskImage: `url(${src})`, maskImage: `url(${src})` });
