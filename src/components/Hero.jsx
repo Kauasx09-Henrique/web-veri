@@ -31,7 +31,12 @@ function Hero() {
                                 <path d="M5 12h14M13 6l6 6-6 6" />
                             </svg>
                         </a>
-                        <a href="#tratamentos" className={styles.secondary}>Ver tratamentos</a>
+                        <a href="#tratamentos" className={styles.secondary} onClick={(e) => {
+                            e.preventDefault();
+                            document.getElementById('servicos').scrollIntoView({ behavior: 'smooth' });
+                        }}>
+                            Ver tratamentos
+                        </a>
                     </div>
                 </div>
             </div>
