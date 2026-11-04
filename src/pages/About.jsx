@@ -31,7 +31,7 @@ function About() {
                             <img src="/veris-sobre.png" alt="Dra. Isabela Sena" className={styles.image} />
                         </div>
                         <figcaption className={styles.caption}>
-                            <span>Dra. Isabela Sena</span>
+                            <span>VERI ODONTOLOGIA</span>
                             <span>CRO-DF 4302</span>
                         </figcaption>
                     </figure>
@@ -39,24 +39,18 @@ function About() {
                     <div className={styles.text}>
                         <div className={styles.bio}>
                             <h3 className={styles.title}>
-                                Dra. Isabela <em>Sena</em>
+                                Uma odontologia que vai <em>além do procedimento</em>
                             </h3>
                             <p className={styles.description}>
-                                Cada plano nasce de uma conversa sem pressa — sobre o que você sente, o que deseja
-                                e o que faz sentido para o seu rosto.
+                                Na Veri, acreditamos que um bom tratamento começa antes mesmo da primeira intervenção: na escuta, na compreensão de cada necessidade e em uma avaliação criteriosa que permita indicar o caminho mais adequado para cada paciente.
                             </p>
                             <p className={styles.description}>
-                                Com formação em estética e reabilitação oral, uno técnica precisa e olhar artístico
-                                para entregar resultados naturais e duradouros.
+                                À frente da clínica, Isabela Sena e Leonardo Magri unem formação especializada, experiência clínica e dedicação à prática baseada em evidências científicas. Essa visão se traduz em uma odontologia que valoriza o planejamento, a precisão técnica, a transparência em cada etapa e o cuidado humanizado.
+                            </p>
+                            <p className={styles.description}>
+                                Nosso propósito é oferecer cuidado de excelência, com responsabilidade, transparência e proximidade. Para que você se sinta seguro não apenas com o tratamento escolhido, mas também com todo o processo.
                             </p>
                         </div>
-
-                        <a href={waLink} target="_blank" rel="noreferrer" className={styles.cta}>
-                            Agende uma conversa
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
-                                <path d="M5 12h14M13 6l6 6-6 6" />
-                            </svg>
-                        </a>
                     </div>
                 </div>
 
@@ -66,10 +60,17 @@ function About() {
                         {areas.map((title, i) => (
                             <div key={title} className={styles.listItem}>
                                 <span className={styles.listNumber}>{String(i + 1).padStart(2, '0')}</span>
-                                <h4>{title.replace('temporomandibular', 'temporo\u00ADmandibular').replace('bucomaxilofacial', 'buco\u00ADmaxilo\u00ADfacial')}</h4>
+                                <h4>{title}</h4>
                             </div>
                         ))}
                     </div>
+
+                    <a href={waLink} target="_blank" rel="noreferrer" className={styles.cta}>
+                        Agende uma conversa
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
+                            <path d="M5 12h14M13 6l6 6-6 6" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
