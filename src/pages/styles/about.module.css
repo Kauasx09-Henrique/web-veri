@@ -106,7 +106,7 @@
   margin: 0;
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(38px, 50Svw, 44px);
+  font-size: clamp(32px, 3vw, 44px);
   line-height: 1.05;
 }
 .title em { color: var(--accent); }
@@ -123,8 +123,10 @@
 .areas {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  align-items: center;
+  gap: 32px;
   margin-top: clamp(64px, 8vw, 112px);
+  text-align: center;
 }
 
 .listTitle {
@@ -137,19 +139,21 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  border-top: 1px solid var(--rule);
+  grid-template-columns: repeat(7, minmax(0, 4fr));
+  width: 135%;
+  border-right: 1px solid var(--rule);
 }
 
 .listItem {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
-  padding: 24px 20px 8px;
+  padding: 24px 10px;
   border-left: 1px solid var(--rule);
+  text-align: center;
   transition: background .3s;
 }
-.listItem:first-child { border-left: none; padding-left: 0; }
 .listItem:hover { background: rgba(155, 94, 71, .06); }
 
 .listNumber { font-size: 12px; letter-spacing: .2em; color: var(--accent); }
@@ -158,10 +162,9 @@
   margin: 0;
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(18px, 1.45vw, 22px);
+  font-size: clamp(16px, 1.25vw, 20px);
   line-height: 1.2;
-  overflow-wrap: anywhere;
-  hyphens: auto;
+  overflow-wrap: normal;
 }
 .listItem p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
 
@@ -189,10 +192,9 @@
 
 .about a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-@media (max-width: 1200px) {
-  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 0; }
-  .listItem { border-bottom: 1px solid var(--rule); }
-  .listItem:nth-child(4n + 1) { border-left: none; padding-left: 0; }
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 16px; border-right: none; }
+  .listItem { border-right: 1px solid var(--rule); margin-right: -1px; }
 }
 
 @media (max-width: 960px) {
@@ -201,12 +203,7 @@
   .text { padding-top: 0; }
 }
 
-@media (max-width: 720px) {
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .listItem:nth-child(4n + 1) { border-left: 1px solid var(--rule); padding-left: 20px; }
-  .listItem:nth-child(2n + 1) { border-left: none; padding-left: 0; }
-}
-
 @media (max-width: 560px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cta { width: 100%; min-width: 0; }
 }

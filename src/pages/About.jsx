@@ -1,6 +1,6 @@
 import styles from './styles/about.module.css';
 
-const WHATSAPP = '5500000000000';
+const WHATSAPP = '5561998802777';
 const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá, Dra. Isabela! Gostaria de agendar uma conversa.')}`;
 
 const areas = [
@@ -66,7 +66,7 @@ function About() {
                         {areas.map((title, i) => (
                             <div key={title} className={styles.listItem}>
                                 <span className={styles.listNumber}>{String(i + 1).padStart(2, '0')}</span>
-                                <h4>{title.replace('temporomandibular', 'temporo\u00ADmandibular')}</h4>
+                                <h4>{title.replace('temporomandibular', 'temporo\u00ADmandibular').replace('bucomaxilofacial', 'buco\u00ADmaxilo\u00ADfacial')}</h4>
                             </div>
                         ))}
                     </div>
